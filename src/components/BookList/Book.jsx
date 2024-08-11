@@ -17,7 +17,7 @@ const Book = ({
       </div>
       <div className="book-item-info text-center">
         <Link to={`/book/${id}`}>
-          <div className="book-item-info-item title font-bold text-[1.8rem]">
+          <div className="book-item-info-item title font-bold text-[1.8rem] text-orange-800">
             <span>{title}</span>
           </div>
         </Link>
