@@ -50,7 +50,14 @@ const About = () => {
             </p>
             <p className="text-[1.7rem] italic">
               Created And Mainted By Moxit Rewar. <br />
-              For Suggestions, Contact Me At Discord- @iammate
+              For Suggestions, Contact Me At Discord-{" "}
+              <a
+                href="https://discord.com/users/839441992974073867"
+                className="custom-link"
+                target="_blank"
+              >
+                @iammate
+              </a>
             </p>
           </div>
         </div>
