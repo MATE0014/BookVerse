@@ -17,7 +17,7 @@ const Book = ({
           <img src={cover_img} alt="cover" />
         </div>
         <div className="book-item-info text-center">
-          <div className="book-item-info-item title font-bold text-[1.8rem] text-orange-800">
+          <div className="book-item-info-item title font-bold text-[1.8rem]">
             <span>{title}</span>
           </div>
 
