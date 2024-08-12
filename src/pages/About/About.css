@@ -26,3 +26,19 @@
     margin-left: 0;
   }
 }
+
+.custom-link {
+  color: var(--purple-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.custom-link:hover {
+  color: #0063e6;
+  text-decoration: underline;
+}
+
+.custom-link:visited {
+  color: var(--purple-color);
+  text-decoration: none;
+}
