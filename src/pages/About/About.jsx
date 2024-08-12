@@ -40,15 +40,6 @@ const About = () => {
               of stories, ideas, and inspiration.
             </p>
             <p className="text-[1.7rem] italic">
-              <a
-                href="https://github.com/MATE0014/BookVerse/"
-                className="custom-link"
-                target="_blank"
-              >
-                source code can be found here!
-              </a>
-            </p>
-            <p className="text-[1.7rem] italic">
               Created And Mainted By Moxit Rewar. <br />
               For Suggestions, Contact Me At Discord-{" "}
               <a
