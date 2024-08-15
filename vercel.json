@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "moxitrewar.vercel.app"
+        }
+      ],
+      "destination": "/",
+      "statusCode": 404
+    }
+  ]
+}
