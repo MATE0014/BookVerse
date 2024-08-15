@@ -12,13 +12,15 @@ createRoot(document.getElementById("root")).render(
   <AppProvider>
     <BrowserRouter>
       <Routes>
+        {/* Home Route */}
         <Route path="/" element={<Home />}>
+          {/* Nested Routes */}
           <Route path="about" element={<About />} />
           <Route path="book" element={<BookList />} />
           <Route path="book/:id" element={<BookDetails />} />
         </Route>
 
-        {/* Catch-all route to redirect to home */}
+        {/* Catch-all route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
