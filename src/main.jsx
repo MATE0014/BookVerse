@@ -5,7 +5,7 @@ import { AppProvider } from "./index";
 import "./index.css";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
-import BookList from "./components/BookList/BookList";
+import BookList from "./components/BookList/BookLis";
 import BookDetails from "./components/BookDetails/BookDetails";
 
 createRoot(document.getElementById("root")).render(
