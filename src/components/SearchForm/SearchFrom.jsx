@@ -32,7 +32,7 @@ const SearchFrom = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Book Name (Ex- Harry Potter)"
+                placeholder="Book Name (Eg- Harry Potter)"
                 ref={searchText}
               />
               <button
