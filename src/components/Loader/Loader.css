@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
@@ -24,13 +24,13 @@
 
 .loader-text {
   font-size: 1.5rem;
-  color: #333;
+  color: #ccc;
 }
 
 .loader-text::after {
   content: " ";
   display: inline-block;
-  width: 1em; /* Width of one character */
+  width: 1em;
   text-align: left;
   animation: dots 1.5s steps(3, end) infinite;
 }

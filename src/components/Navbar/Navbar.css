@@ -1,9 +1,11 @@
 .navbar {
   padding: 1.8rem 0;
+  background-color: #212121;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 .navbar-brand {
+  color: #fff;
   width: 90px;
 }
 .navbar-brand span {
@@ -25,7 +27,7 @@
   right: 0;
   top: 0;
   z-index: 10;
-  background-color: var(--black-color);
+  background-color: #212121;
   height: 100%;
   width: 280px;
   display: flex;
@@ -40,10 +42,11 @@
   margin-bottom: 1.4rem;
 }
 .nav-link {
+  color: #fff !important;
   transition: var(--transition);
 }
 .nav-link:hover {
-  color: var(--purple-color);
+  color: #444;
 }
 
 @media screen and (min-width: 992px) {
@@ -52,7 +55,7 @@
     height: auto;
     padding: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: #212121;
     transform: translateX(0);
     justify-content: flex-end;
   }
@@ -64,7 +67,7 @@
     margin-left: 2.8rem;
   }
   .nav-link {
-    color: var(--black-color);
+    color: #fff;
     font-size: 1.7rem;
     font-weight: 600 !important;
     opacity: 0.8;

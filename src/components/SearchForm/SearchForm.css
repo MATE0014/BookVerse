@@ -6,6 +6,7 @@
 .search-form-elem {
   padding: 1.4rem 2.8rem;
   border-radius: 3.8rem;
+  background-color: #212121;
 }
 
 .search-form-elem .form-control {
@@ -13,7 +14,9 @@
   padding: 0.6rem 1.2rem;
   width: 100%;
   box-sizing: border-box;
-  color: black;
+  color: #fff;
+  background-color: #212121;
+  border: none;
 }
 
 .search-form-elem .form-control::placeholder {

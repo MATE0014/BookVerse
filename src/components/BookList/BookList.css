@@ -1,7 +1,7 @@
 .booklist,
 .book-details {
   padding: 3rem 0;
-  background-color: #f8f9fa;
+  background-color: #212121;
 }
 
 .booklist-content {
@@ -11,8 +11,8 @@
 .book-item {
   padding: 2rem 2rem;
   border-radius: 4px;
-  background-color: var(--white-color);
-  box-shadow: rgba(152, 52, 18, 0.4) 0px 5px 15px 0px;
+  background-color: #111111;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px 0px;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
 }
 
 .book-item:hover {
-  box-shadow: rgba(152, 52, 18, 0.8) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px 0px;
 }
 
 .book-item-img {
@@ -40,26 +40,33 @@
 }
 
 .book-item-info-item.title {
+  color: #fff;
   line-height: 1.4;
   margin-bottom: 0.8rem;
 }
 
 .book-item-info-item.author {
+  color: #e0e0e0;
   line-height: 1.4;
   margin-bottom: 4px;
 }
 
 .book-item-info-item:not(.book-item-info-item.title) span:last-child {
   opacity: 0.8;
+  color: #d3d3d3;
+}
+
+.book-item-info-item.edition-count {
+  color: #cccccc;
 }
 
 .book-item-info-item.publish-year {
   opacity: 0.6;
   font-style: italic;
   font-size: 14px;
+  color: #c0c0c0;
 }
 
-/* Grid layout adjustments for different screen sizes */
 @media screen and (min-width: 600px) {
   .booklist-content {
     grid-template-columns: repeat(2, 1fr);

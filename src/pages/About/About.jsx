@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./About.css";
 import aboutImg from "../../images/about-img.jpg";
+import Loader from "../../components/Loader/Loader";
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="about">
+      {loading && <Loader />}
       <div className="container">
         <div className="section-title">
           <h2>About</h2>
@@ -38,16 +50,18 @@ const About = () => {
               with fellow book enthusiasts. Whether you're a casual reader or a
               devoted bibliophile, BookVerse is your gateway to an endless world
               of stories, ideas, and inspiration.
-            </p>
+            </p>{" "}
+            <br />
             <p className="text-[1.7rem] italic">
               Created And Mainted By Moxit Rewar. <br />
-              For Suggestions, Contact Me At Discord-{" "}
+              For Any Enquiries <br />
+              Email Me At -{" "}
               <a
-                href="https://discord.com/users/839441992974073867"
+                href="mailto:moxitrewar777@gmail.com"
                 className="custom-link"
                 target="_blank"
               >
-                @iammate
+                moxitrewar777@gmail.com{" "}
               </a>
             </p>
           </div>

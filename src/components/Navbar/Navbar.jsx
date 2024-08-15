@@ -26,7 +26,7 @@ const Navbar = () => {
             <HiOutlineMenuAlt3
               size={35}
               style={{
-                color: toggleMenu ? "#fff" : "#010101",
+                color: toggleMenu ? "#ccc" : "#fff",
               }}
             />
           </button>

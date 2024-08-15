@@ -40,7 +40,7 @@ const SearchFrom = () => {
                 className="flex items-center flex-col"
                 onClick={handleSubmit}
               >
-                <FaSearch className="text-orange-800" size={32} />
+                <FaSearch className="text-gray-200" size={32} />
               </button>
             </div>
           </form>
