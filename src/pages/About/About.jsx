@@ -28,28 +28,28 @@ const About = () => {
           </div>
           <div className="about-text">
             <h2 className="about-title text-[2.6rem] tracking-[1px]">
-              About BookVerse
+              About ShelfSeeker
             </h2>
             <p className="text-[1.7rem]">
-              BookVerse is more than just a website; it’s a community for book
+              ShelfSeeker is more than just a website; it’s a community for book
               lovers, by book lovers. Our mission is to create a comprehensive
               and user-friendly platform where readers of all kinds can
               discover, explore, and connect with the world of literature.
               Whether you're searching for the latest bestseller, a hidden gem,
-              or a timeless classic, BookVerse is here to guide you through your
-              literary journey. We believe that books have the power to inspire,
-              educate, and entertain, and our goal is to make it easier for you
-              to find the perfect read.
+              or a timeless classic, ShelfSeeker is here to guide you through
+              your literary journey. We believe that books have the power to
+              inspire, educate, and entertain, and our goal is to make it easier
+              for you to find the perfect read.
             </p>
             <p className="text-[1.7rem]">
-              At BookVerse, we understand that every reader is unique, and so is
-              every book. That's why we provide detailed information, reviews,
-              and personalized recommendations to help you find books that match
-              your interests. But we don’t stop there; we also offer a space for
-              readers to share their thoughts, join discussions, and connect
-              with fellow book enthusiasts. Whether you're a casual reader or a
-              devoted bibliophile, BookVerse is your gateway to an endless world
-              of stories, ideas, and inspiration.
+              At ShelfSeeker, we understand that every reader is unique, and so
+              is every book. That's why we provide detailed information,
+              reviews, and personalized recommendations to help you find books
+              that match your interests. But we don’t stop there; we also offer
+              a space for readers to share their thoughts, join discussions, and
+              connect with fellow book enthusiasts. Whether you're a casual
+              reader or a devoted bibliophile, ShelfSeeker is your gateway to an
+              endless world of stories, ideas, and inspiration.
             </p>{" "}
             <br />
             <p className="text-[1.7rem] italic">

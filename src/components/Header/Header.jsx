@@ -14,7 +14,7 @@ const Header = () => {
           </h2>
           <br />
           <p className="header-text text-[1.8rem] font-light">
-            Welcome to BookVerse, your ultimate destination for exploring the
+            Welcome to ShelfSeeker, your ultimate destination for exploring the
             world of literature. With easy search functionality and curated
             recommendations, finding your next favorite read has never been
             easier. Join our community of book enthusiasts and dive into a

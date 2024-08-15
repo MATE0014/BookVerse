@@ -15,7 +15,7 @@ const Navbar = () => {
           <Link to="/" className="navbar-brand flex items-center">
             <img src={logoImg} alt="BookVerse" />
             <span className="uppercase font-bold text-[2.4rem] tracking-[1px]">
-              BookVerse
+              ShelfSeeker
             </span>
           </Link>
           <button

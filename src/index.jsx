@@ -40,7 +40,7 @@ const AppProvider = ({ children }) => {
         setBooks(newBooks);
 
         if (newBooks.length >= 1) {
-          setResultTitle("Dive Into The BookVerse Below!");
+          setResultTitle("Here's Your Nice & Cozy Shelf!");
         } else {
           setResultTitle("We're Sorry, No Such Books Found!");
         }

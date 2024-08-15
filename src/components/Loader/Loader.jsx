@@ -8,7 +8,7 @@ const Loader = () => {
       <div className="loader">
         <img src={LoaderImg} alt="loader" />
         <div className="loader-text capitalize">
-          please wait while we prepare the bookVerse for you
+          please wait while we arrange the shelf for you
         </div>
       </div>
     </div>
