@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect, useCallback } from "react";
 
-// Use the Google Books API endpoint
 const URL = "https://www.googleapis.com/books/v1/volumes?q=intitle:";
 const AppContext = React.createContext();
 
@@ -27,7 +26,8 @@ const AppProvider = ({ children }) => {
               imageLinks,
               publishedDate,
               pageCount,
-              averageRating, // Fetch average rating from Google Books API
+              averageRating,
+              categories,
             },
           } = bookSingle;
 
@@ -40,7 +40,8 @@ const AppProvider = ({ children }) => {
             first_publish_year: publishedDate
               ? new Date(publishedDate).getFullYear()
               : "Unknown",
-            average_rating: averageRating || "No Rating Available", // Include average rating
+            average_rating: averageRating || "No Rating Available",
+            genres: categories || ["No Genre Available"],
           };
         });
 

@@ -10,6 +10,7 @@ const Book = ({
   cover_img = coverImg,
   edition_count = "Unknown",
   first_publish_year = "Unknown",
+  genres = ["No Genre Available"], // Add genres prop
 }) => {
   return (
     <Link to={`/book/${id}`}>
@@ -30,6 +31,11 @@ const Book = ({
           <div className="book-item-info-item edition-count text-[1.5rem]">
             <span className="capitalize font-bold">Total Editions: </span>
             <span>{edition_count}</span>
+          </div>
+
+          <div className="book-item-info-item genre text-[1.5rem]">
+            <span className="capitalize font-bold">Genre: </span>
+            <span>{genres.join(", ")}</span>
           </div>
 
           <div className="book-item-info-item publish-year text-[1.5rem]">

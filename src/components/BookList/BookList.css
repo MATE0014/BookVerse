@@ -62,6 +62,12 @@
   margin-bottom: 4px;
 }
 
+.book-item-info-item.genre {
+  color: #cccccc;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
 .book-item-info-item.publish-year {
   opacity: 0.6;
   font-style: italic;

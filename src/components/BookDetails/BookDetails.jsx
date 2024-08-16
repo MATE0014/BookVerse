@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Loading from "../Loader/Loader";
 import coverImg from "../../images/cover_not_found.jpg";
 import "./BookDetails.css";
 import { FaArrowLeft } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 const URL = "https://www.googleapis.com/books/v1/volumes/";
 
@@ -15,55 +14,62 @@ const BookDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setLoading(true);
-    async function getBookDetails() {
+    const fetchBookDetails = async () => {
+      setLoading(true);
       try {
         const response = await fetch(`${URL}${id}`);
         const data = await response.json();
-
-        if (data) {
-          const {
-            volumeInfo: {
-              description,
-              title,
-              imageLinks,
-              places,
-              time,
-              subjects,
-            },
-          } = data;
-
-          // Clean up the description
-          const cleanDescription = description
-            ? description
-                .replace(/\[.*?\]\(.*?\)/g, "")
-                .replace(/See also:.*/s, "")
-                .replace(/\(\[source\]\[\d+\]\)\s*-+\s*/g, "")
-                .trim() || "No description found"
-            : "No description found";
-
-          const newBook = {
-            description: cleanDescription,
-            title: title || "No title found",
-            cover_img: imageLinks?.thumbnail || coverImg,
-            subject_places: places
-              ? places.join(", ")
-              : "No subject places found",
-            subject_times: time ? time.join(", ") : "No subject times found",
-            subjects: subjects ? subjects.join(", ") : "No subjects found",
-          };
-          setBook(newBook);
-        } else {
-          setBook(null);
-        }
-        setLoading(false);
+        setBook(parseBookData(data));
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching book details:", error);
+        setBook(null);
+      } finally {
         setLoading(false);
       }
-    }
-    getBookDetails();
+    };
+
+    fetchBookDetails();
   }, [id]);
+
+  const parseBookData = (data) => {
+    if (!data) return null;
+
+    const {
+      volumeInfo: {
+        description,
+        title,
+        imageLinks,
+        places,
+        time,
+        subjects,
+        categories,
+      },
+    } = data;
+
+    return {
+      description: cleanDescription(description),
+      title: title || "No title found",
+      cover_img: imageLinks?.thumbnail || coverImg,
+      subject_places: formatList(places),
+      subject_times: formatList(time),
+      subjects: formatList(subjects),
+      genres: formatList(categories, "No genre found"),
+    };
+  };
+
+  const cleanDescription = (description) => {
+    return description
+      ? description
+          .replace(/\[.*?\]\(.*?\)/g, "")
+          .replace(/See also:.*/s, "")
+          .replace(/\(\[source\]\[\d+\]\)\s*-+\s*/g, "")
+          .trim() || "No description found"
+      : "No description found";
+  };
+
+  const formatList = (list, fallback = "No items found") => {
+    return list ? list.join(", ") : fallback;
+  };
 
   if (loading) return <Loading />;
 
@@ -101,6 +107,10 @@ const BookDetails = () => {
             <div className="book-details-item">
               <span className="font-semibold">Subjects: </span>
               <span>{book?.subjects}</span>
+            </div>
+            <div className="book-details-item">
+              <span className="font-semibold">Genres: </span>
+              <span>{book?.genres}</span>
             </div>
           </div>
         </div>
