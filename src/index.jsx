@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
-import { useCallback } from "react";
-const URL = "https://openlibrary.org/search.json?title=";
+import React, { useState, useContext, useEffect, useCallback } from "react";
+
+// Use the Google Books API endpoint
+const URL = "https://www.googleapis.com/books/v1/volumes?q=intitle:";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
@@ -12,28 +13,34 @@ const AppProvider = ({ children }) => {
   const fetchBooks = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${URL}${searchTerm}`);
+      const response = await fetch(`${URL}${encodeURIComponent(searchTerm)}`);
       const data = await response.json();
-      const { docs } = data;
+      const { items } = data;
 
-      if (docs) {
-        const newBooks = docs.slice(0, 20).map((bookSingle) => {
+      if (items) {
+        const newBooks = items.slice(0, 20).map((bookSingle) => {
           const {
-            key,
-            author_name,
-            cover_i,
-            edition_count,
-            first_publish_year,
-            title,
+            id,
+            volumeInfo: {
+              title,
+              authors,
+              imageLinks,
+              publishedDate,
+              pageCount,
+              averageRating, // Fetch average rating from Google Books API
+            },
           } = bookSingle;
 
           return {
-            id: key,
-            author: author_name,
-            cover_id: cover_i,
-            edition_count: edition_count,
-            first_publish_year: first_publish_year,
-            title: title,
+            id,
+            title,
+            author: authors || ["Unknown Author"],
+            cover_id: imageLinks ? imageLinks.thumbnail : null,
+            edition_count: pageCount || "Unknown",
+            first_publish_year: publishedDate
+              ? new Date(publishedDate).getFullYear()
+              : "Unknown",
+            average_rating: averageRating || "No Rating Available", // Include average rating
           };
         });
 
@@ -61,7 +68,14 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ loading, books, setSearchTerm, resultTitle, setResultTitle }}
+      value={{
+        loading,
+        books,
+        setSearchTerm,
+        setBooks,
+        resultTitle,
+        setResultTitle,
+      }}
     >
       {children}
     </AppContext.Provider>

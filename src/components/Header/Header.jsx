@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import SearchForm from "../SearchForm/SearchForm";
+import BrowseBtn from "../BrowseBtn/BrowseBtn";
 import "./Header.css";
 
 const Header = () => {
@@ -20,7 +21,10 @@ const Header = () => {
             easier. Join our community of book enthusiasts and dive into a
             universe of stories waiting to be explored. Happy reading!
           </p>
-          <SearchForm />
+          <SearchForm /> <br />
+          <br />
+          <br />
+          <BrowseBtn />
         </div>
       </header>
     </div>

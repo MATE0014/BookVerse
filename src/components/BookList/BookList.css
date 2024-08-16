@@ -58,6 +58,8 @@
 
 .book-item-info-item.edition-count {
   color: #cccccc;
+  line-height: 1.4;
+  margin-bottom: 4px;
 }
 
 .book-item-info-item.publish-year {

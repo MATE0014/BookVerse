@@ -1,0 +1,17 @@
+.browse-btn {
+  color: #ccc;
+}
+
+.browse-btn-elem {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #212121;
+  border: none;
+  border-radius: 2.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.browse-btn-elem:hover {
+  background-color: #111;
+}

@@ -1,20 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import coverImg from "../../images/cover_not_found.jpg";
 import "./BookList.css";
 
 const Book = ({
   id,
-  title,
-  author = [],
-  cover_img,
-  edition_count,
-  first_publish_year,
+  title = "No Title Available",
+  author = ["Unknown Author"],
+  cover_img = coverImg,
+  edition_count = "Unknown",
+  first_publish_year = "Unknown",
 }) => {
   return (
     <Link to={`/book/${id}`}>
       <div className="book-item flex items-center flex-col justify-between">
         <div className="book-item-img">
-          <img src={cover_img} alt="cover" />
+          <img src={cover_img} alt={title} />
         </div>
         <div className="book-item-info text-center">
           <div className="book-item-info-item title font-bold text-[1.8rem]">

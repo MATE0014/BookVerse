@@ -6,7 +6,7 @@ import "./BookDetails.css";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const URL = "https://openlibrary.org/works/";
+const URL = "https://www.googleapis.com/books/v1/volumes/";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -18,23 +18,24 @@ const BookDetails = () => {
     setLoading(true);
     async function getBookDetails() {
       try {
-        const response = await fetch(`${URL}${id}.json`);
+        const response = await fetch(`${URL}${id}`);
         const data = await response.json();
-        console.log(data);
 
         if (data) {
           const {
-            description,
-            title,
-            covers,
-            subject_places,
-            subject_times,
-            subjects,
+            volumeInfo: {
+              description,
+              title,
+              imageLinks,
+              places,
+              time,
+              subjects,
+            },
           } = data;
 
           // Clean up the description
           const cleanDescription = description
-            ? description.value
+            ? description
                 .replace(/\[.*?\]\(.*?\)/g, "")
                 .replace(/See also:.*/s, "")
                 .replace(/\(\[source\]\[\d+\]\)\s*-+\s*/g, "")
@@ -43,16 +44,12 @@ const BookDetails = () => {
 
           const newBook = {
             description: cleanDescription,
-            title: title,
-            cover_img: covers
-              ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg`
-              : coverImg,
-            subject_places: subject_places
-              ? subject_places.join(", ")
+            title: title || "No title found",
+            cover_img: imageLinks?.thumbnail || coverImg,
+            subject_places: places
+              ? places.join(", ")
               : "No subject places found",
-            subject_times: subject_times
-              ? subject_times.join(", ")
-              : "No subject times found",
+            subject_times: time ? time.join(", ") : "No subject times found",
             subjects: subjects ? subjects.join(", ") : "No subjects found",
           };
           setBook(newBook);

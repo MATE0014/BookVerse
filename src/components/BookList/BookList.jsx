@@ -8,13 +8,11 @@ import "./BookList.css";
 const BookList = () => {
   const { books, loading, resultTitle } = useGlobalContext();
 
-  // Transform book data to include proper cover image URLs
   const booksWithCovers = books.map((singleBook) => {
     return {
       ...singleBook,
-      id: singleBook.id.replace("/works/", ""),
       cover_img: singleBook.cover_id
-        ? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg`
+        ? `https://books.google.com/books/content?id=${singleBook.id}&printsec=frontcover&img=1&zoom=1`
         : coverImg,
     };
   });
