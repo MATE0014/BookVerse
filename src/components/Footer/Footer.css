@@ -1,0 +1,98 @@
+.footer {
+  background-color: #212121;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 0rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+.animate-footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-top-design {
+  height: 5px;
+  background: linear-gradient(90deg, #f1c40f, #e67e22, #f1c40f);
+  margin-bottom: 1.5rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 22rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: 0.25s;
+}
+
+.footer-logo-section {
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-title {
+  font-size: 2rem;
+  margin: 0;
+  color: #f1c40f;
+}
+
+.footer-logo {
+  height: 7rem;
+  width: 7rem;
+}
+
+.footer-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #ddd;
+  opacity: 0.8;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link {
+  font-size: 1.6rem;
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #f1c40f;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
