@@ -10,7 +10,12 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://shelfseeker.vercel.app",
+    methods: "GET,POST,OPTIONS",
+  })
+);
 app.use(bodyParser.json());
 
 // Connect to MongoDB
