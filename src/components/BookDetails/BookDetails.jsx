@@ -5,6 +5,7 @@ import coverImg from "../../images/cover_not_found.jpg";
 import "./BookDetails.css";
 import { FaArrowLeft } from "react-icons/fa";
 
+const API_KEY = import.meta.env.VITE_BOOKS_API_KEY;
 const URL = "https://www.googleapis.com/books/v1/volumes/";
 
 const BookDetails = () => {
@@ -17,7 +18,7 @@ const BookDetails = () => {
     const fetchBookDetails = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`${URL}${id}`);
+        const response = await fetch(`${URL}${id}?key=${API_KEY}`);
         const data = await response.json();
         setBook(parseBookData(data));
       } catch (error) {

@@ -4,8 +4,8 @@ import { useGlobalContext } from "../../index";
 import Loader from "../Loader/Loader"; // Import the Loader component
 import "./BrowseBtn.css";
 
-const URL =
-  "https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=40";
+const API_KEY = import.meta.env.VITE_BOOKS_API_KEY;
+const URL = `https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=40&key=${API_KEY}`;
 
 const BrowseBtn = () => {
   const { setSearchTerm, setResultTitle } = useGlobalContext();

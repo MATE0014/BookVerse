@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useCallback } from "react";
 
-const URL = "https://www.googleapis.com/books/v1/volumes?q=intitle:";
+const API_KEY = import.meta.env.VITE_BOOKS_API_KEY;
+const URL = `https://www.googleapis.com/books/v1/volumes?q=intitle:&key=${API_KEY}:`;
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
@@ -12,7 +13,8 @@ const AppProvider = ({ children }) => {
   const fetchBooks = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${URL}${encodeURIComponent(searchTerm)}`);
+      const query = encodeURIComponent(`intitle:${searchTerm}`);
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${API_KEY}`);
       const data = await response.json();
       const { items } = data;
 
