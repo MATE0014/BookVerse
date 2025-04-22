@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
               Our privacy practices are guided by the principles of transparency
               and integrity. We will always inform you about what data we
               collect, why we collect it, and how you can control your personal
-              information.
+              info.
             </p>{" "}
             <br />
             <p className="text-[1.7rem] italic">
